@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { deleteMockData, getMockData, postMockData, putMockData } from '~/server/api/mock'
+import { deleteMockData, getMockData, postMockData, putMockData } from '~/api/mock'
 </script>
 
 <template>
