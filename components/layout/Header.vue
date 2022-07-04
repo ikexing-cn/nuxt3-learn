@@ -12,24 +12,24 @@ const route = useRoute()
       :style="{ lineHeight: '64px' }"
     >
       <a-menu-item key="/">
-        <router-link to="/">
+        <nuxt-link to="/">
           首页
-        </router-link>
+        </nuxt-link>
       </a-menu-item>
       <a-menu-item key="/course-list">
-        <router-link to="course-list">
+        <nuxt-link to="course-list">
           课程中心
-        </router-link>
+        </nuxt-link>
       </a-menu-item>
       <a-menu-item key="/member-vip">
-        <router-link to="member-vip">
+        <nuxt-link to="member-vip">
           超级会员
-        </router-link>
+        </nuxt-link>
       </a-menu-item>
       <a-menu-item key="/tool">
-        <router-link to="tool">
+        <nuxt-link to="tool">
           工具
-        </router-link>
+        </nuxt-link>
       </a-menu-item>
     </a-menu>
   </a-layout-header>

@@ -3,7 +3,7 @@
 
 <template>
   <a-layout id="layout">
-    <LayoutHeader />
+    <layout-header />
     <a-layout-content id="content">
       <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">
         <slot />

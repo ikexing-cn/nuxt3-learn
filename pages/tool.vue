@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  tool
+  <div>tool</div>
 </template>
 
 <style lang="less">

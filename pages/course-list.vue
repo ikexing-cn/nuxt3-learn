@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  course-list
+  <div>course-list</div>
 </template>
 
 <style lang="less">

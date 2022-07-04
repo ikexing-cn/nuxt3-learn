@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  member-vip
+  <div>member-vip</div>
 </template>
 
 <style lang="less">
