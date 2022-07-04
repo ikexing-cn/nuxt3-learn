@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     plugins: [
       Components({
         resolvers: [AntDesignVueResolver({ resolveIcons: true })],
+        dts: 'types/components.d.ts',
       }),
     ],
     // @ts-expect-error: Missing ssr key

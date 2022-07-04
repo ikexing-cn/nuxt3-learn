@@ -7,27 +7,18 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ABreadcrumb: typeof import('ant-design-vue/es')['Breadcrumb']
-    ABreadcrumbItem: typeof import('ant-design-vue/es')['BreadcrumbItem']
     AButton: typeof import('ant-design-vue/es')['Button']
     ALayout: typeof import('ant-design-vue/es')['Layout']
     ALayoutContent: typeof import('ant-design-vue/es')['LayoutContent']
     ALayoutFooter: typeof import('ant-design-vue/es')['LayoutFooter']
     ALayoutHeader: typeof import('ant-design-vue/es')['LayoutHeader']
-    ALayoutSider: typeof import('ant-design-vue/es')['LayoutSider']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
-    AMenuItemGroup: typeof import('ant-design-vue/es')['MenuItemGroup']
     ASubMenu: typeof import('ant-design-vue/es')['SubMenu']
-    DownloadOutlined: typeof import('@ant-design/icons-vue')['DownloadOutlined']
-    LaptopOutlined: typeof import('@ant-design/icons-vue')['LaptopOutlined']
     MinusCircleTwoTone: typeof import('@ant-design/icons-vue')['MinusCircleTwoTone']
-    NotificationOutlined: typeof import('@ant-design/icons-vue')['NotificationOutlined']
     PlusCircleTwoTone: typeof import('@ant-design/icons-vue')['PlusCircleTwoTone']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SettingOutlined: typeof import('@ant-design/icons-vue')['SettingOutlined']
-    UserOutlined: typeof import('@ant-design/icons-vue')['UserOutlined']
   }
 
 }
