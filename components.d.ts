@@ -17,11 +17,13 @@ declare module '@vue/runtime-core' {
     ALayoutSider: typeof import('ant-design-vue/es')['LayoutSider']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
+    AMenuItemGroup: typeof import('ant-design-vue/es')['MenuItemGroup']
     ASubMenu: typeof import('ant-design-vue/es')['SubMenu']
     LaptopOutlined: typeof import('@ant-design/icons-vue')['LaptopOutlined']
     NotificationOutlined: typeof import('@ant-design/icons-vue')['NotificationOutlined']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SettingOutlined: typeof import('@ant-design/icons-vue')['SettingOutlined']
     UserOutlined: typeof import('@ant-design/icons-vue')['UserOutlined']
   }
 
