@@ -1,9 +1,29 @@
 <script lang="ts" setup>
+import type { SizeType } from 'ant-design-vue/es/config-provider'
+import { useCount } from '~~/composables/count'
+const { inc, dec, count } = useCount()
+
+const btnSize: SizeType = 'small'
 </script>
 
 <template>
-  <div>course-list</div>
+  <div class="horizontal">
+    <a-button type="primary" :size="btnSize" @click="inc()">
+      <template #icon>
+        <plus-circle-two-tone />
+      </template>
+    </a-button>
+    <div> count: {{ count }} </div>
+    <a-button type="primary" :size="btnSize" @click="dec()">
+      <template #icon>
+        <minus-circle-two-tone />
+      </template>
+    </a-button>
+  </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
+.horizontal {
+  display: flex;
+}
 </style>

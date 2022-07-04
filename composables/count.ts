@@ -1,16 +1,16 @@
-export function useCount() {
-  const count = useState('count', () => Math.round(Math.random() * 20))
+import { defineStore } from 'pinia'
+
+export const useCount = defineStore('count', () => {
+  const count = ref<number>(0)
 
   function inc() {
-    count.value += 1
+    count.value++
   }
   function dec() {
-    count.value -= 1
+    count.value--
   }
 
   return {
-    count,
-    inc,
-    dec,
+    count, inc, dec,
   }
-}
+}, { persist: true })

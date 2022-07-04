@@ -11,6 +11,7 @@ specifiers:
   less: ^4.1.3
   nuxt: ^3.0.0-rc.4
   pinia: ^2.0.14
+  pinia-plugin-persistedstate: ^1.6.1
   typescript: ^4.7.4
   unplugin-vue-components: ^0.21.0
 
@@ -25,6 +26,7 @@ devDependencies:
   less: 4.1.3
   nuxt: 3.0.0-rc.4_less@4.1.3
   pinia: 2.0.14_typescript@4.7.4
+  pinia-plugin-persistedstate: 1.6.1_pinia@2.0.14
   typescript: 4.7.4
   unplugin-vue-components: 0.21.0
 
@@ -4973,6 +4975,14 @@ packages:
     engines: {node: '>=6'}
     dev: true
     optional: true
+
+  /pinia-plugin-persistedstate/1.6.1_pinia@2.0.14:
+    resolution: {integrity: sha512-4re0ZO5KgqDnSNWX2RhJVIsIYvH+uaEGTN+UOx34mb7fVoE8A3CfB9QhbMT3Zn7ZSBXTfT2cgI/w7cLq2zNQMw==}
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: 2.0.14_typescript@4.7.4
+    dev: true
 
   /pinia/2.0.14_typescript@4.7.4:
     resolution: {integrity: sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA==}
