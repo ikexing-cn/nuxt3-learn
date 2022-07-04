@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  当前路由 - {{ $route.params.id }}
+  <div>当前路由 - {{ $route.params.id }}</div>
 </template>
 
 <style lang="less">
