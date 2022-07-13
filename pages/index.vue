@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-button type="primary">
+    <a-button type="primary" @click="$router.push('course-list')">
       Primary Button
     </a-button>
     <a-button>Default Button</a-button>
