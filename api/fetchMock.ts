@@ -10,7 +10,7 @@ export async function getMockDataFetch() {
 }
 
 export async function postMockDataFetch() {
-  const data = await useCustomFetch<MockData>('/', { method: 'post' })
+  const data = await useCustomFetch<MockData>('', { method: 'post', headers: { name: 'xd' } })
   console.log(data)
   return data
 }
