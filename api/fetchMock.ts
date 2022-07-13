@@ -5,24 +5,20 @@ interface MockData {
 
 export async function getMockDataFetch() {
   const data = await useCustomFetch<MockData>('')
-  console.log(data)
   return data
 }
 
 export async function postMockDataFetch() {
-  const data = await useCustomFetch<MockData>('', { method: 'post', headers: { name: 'xd' } })
-  console.log(data)
+  const data = await useCustomFetch<MockData>('', { method: 'post', body: { test: 'test' }, headers: { name: 'xd' } })
   return data
 }
 
 export async function putMockDataFetch() {
   const data = await useCustomFetch<MockData>('', { method: 'put' })
-  console.log(data)
   return data
 }
 
 export async function deleteMockDataFetch() {
   const data = await useCustomFetch<MockData>('', { method: 'delete' })
-  console.log(data)
   return data
 }
