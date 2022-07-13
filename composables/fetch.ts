@@ -6,7 +6,8 @@ export const useCustomFetch = $fetch.create({
   async onRequest({ options }) {
     const { count } = storeToRefs(useCount())
     options.headers = {
-      customs: `count: ${count}`,
+      ...options.headers,
+      customs: `count: ${count.value}`,
     }
   },
 })

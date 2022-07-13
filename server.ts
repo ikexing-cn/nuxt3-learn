@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   console.log(req.headers)
-  return req.headers.customs
+  return (req.headers.customs && req.headers.name)
     ? res.status(200).send({ message: 'Great Post success!' })
     : res.status(400).send({ message: 'Bad Post request!' })
 })
