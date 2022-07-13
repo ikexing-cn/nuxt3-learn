@@ -34,11 +34,25 @@ nuxt3-app
 ```
 ---
 4. 路由跳转,<br>
-nuxt3中使用`<NuxtLink>`进行跳转， 等同于`vue-router`的`<RouterLink>`
+nuxt3中使用`<NuxtLink>`进行跳转， 等同于`vue-router`的`<RouterLink>`<br>
+如果需要使用编程式路由跳转，则需要使用`$router.push`方法，如下所示：
+```ts
+// 直接使用即可，无需导入
+// $router 等同于 useRouter()
+$router.push({
+  path: '/user/:id',
+  query: {
+    name: 'nuxt'
+  }
+})
+
+// 同理 $roue 等同于 useRoute()
+const params = $route.params // 获取路由参数
+```
 ---
-4. 路由渲染，<br>
+5. 路由渲染，<br>
 在`vue-router`中我们使用`<RouterView>`来将路由渲染出来，而在nuxt3中则新的语义别名`<NuxtPage>`进行渲染。<br>
-而嵌套路由的的渲染，也是用`<RouterView>`来当渲染容器，但是在vue3中也定义一个新的语义别名`<NuxtChild>`替换
+而嵌套路由的的渲染，vue3中也是用`<RouterView>`来作渲染容器，但是在nuxt3中也定义一个新的语义别名`<NuxtChild>`替换
 ```html
 <!-- 两个子路由页面 -->
 <template>
@@ -68,7 +82,7 @@ nuxt3中使用`<NuxtLink>`进行跳转， 等同于`vue-router`的`<RouterLink>`
 </template>
 ```
 ---
-5.路由拦截器，特殊操作
+6.路由拦截器，特殊操作
 - 第一步： 在`plugins`文件夹里创建一个新的ts文件
 - 第二步： 导出`defineNuxtPlugin`，标识这是一个插件
 ```ts
