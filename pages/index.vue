@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+definePageMeta({
+  middleware: 'auth',
+})
+</script>
+
 <template>
   <div>
     <a-button type="primary" @click="$router.push('course-list')">
