@@ -82,7 +82,60 @@ const params = $route.params // 获取路由参数
 </template>
 ```
 ---
-6.路由拦截器，特殊操作
+6. 中间件，<br>
+在nuxt3中，因默认的路由为约定路由，没有相对应的路由实例，自然是无法像`vue-router`那样通过实例对象去操作路由守卫.<br/>
+但nuxt3像我们提供了一种中间件的方式代替原有操作路由守卫的方式.<br>
+路由中间件分三种，
+- 内联路由中间件，直接在页面中定义
+```ts
+definePageMeta({
+  middleware: (to, from) => {
+    console.log('to', to, 'from', from)
+  },
+})
+```
+- 常规中间件，存放`middleware`目录下，在页面中使用时会自动异步加载
+```ts
+// pages/admin.vue
+definePageMeta({
+  middleware: 'auth',
+  // 可以定义多个
+  // middleware: ['user', 'auth', 'etc..']
+})
+
+// middleware/auth.ts
+export default defineNuxtRouteMiddleware((to, from) => {
+  console.log('to', to, 'from', from)
+  // 可以return到另外一个中间件
+  // return '/secret'
+})
+
+```
+
+- 全局中间件，无需页面引入，存放在`middleware`目录下，需要以.global.{ts/js}结尾，全部路由页面中都会主动加载
+```ts
+// middleware/test.global.ts
+export default defineNuxtRouteMiddleware(() => {
+  console.log('I\'m a global middleware!')
+})
+```
+
+- 动态路由实现，实现动态路由的话会与以上三种常规的有所区别，需要手动运用到nuxt的插件化技术
+```ts
+// plugins/dynamic-route.ts
+
+export default defineNuxtPlugin(() => {
+  addRouteMiddleware('global-test', () => {
+    console.log('global dynamic route middleware')
+  }, { global: true })
+
+  addRouteMiddleware('normal-test', () => {
+    console.log('normal dynamic route middleware')
+  })
+})
+```
+---
+7. 原生路由守卫（HCK）
 - 第一步： 在`plugins`文件夹里创建一个新的ts文件
 - 第二步： 导出`defineNuxtPlugin`，标识这是一个插件
 ```ts
@@ -92,7 +145,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   // todo....
 })
 ```
-- 最后： 将所需的拦截器写入到nuxtApp中的$router里
+- 第三步： 将所需的拦截器写入到nuxtApp中的$router里
 ```ts
 import { defineNuxtPlugin } from '#app'
 
