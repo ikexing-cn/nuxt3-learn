@@ -35,18 +35,19 @@ nuxt3-app
 ---
 4. 路由跳转,<br>
 nuxt3中使用`<NuxtLink>`进行跳转， 等同于`vue-router`的`<RouterLink>`<br>
-如果需要使用编程式路由跳转，则需要使用`$router.push`方法，如下所示：
+如果需要使用编程式路由跳转，则需要使用nuxt3封装的`navigateTo`方法，如下所示：
 ```ts
 // 直接使用即可，无需导入
-// $router 等同于 useRouter()
-$router.push({
+navigateTo({
   path: '/user/:id',
   query: {
     name: 'nuxt'
   }
 })
 
-// 同理 $roue 等同于 useRoute()
+navigateTo('/login')
+
+// 获取当前路由新的话使用，$route
 const params = $route.params // 获取路由参数
 ```
 ---
@@ -116,7 +117,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 ```ts
 // middleware/test.global.ts
 export default defineNuxtRouteMiddleware(() => {
-  console.log('I\'m a global middleware!')
+  console.log(`I'm a global middleware!`)
 })
 ```
 
